@@ -1,68 +1,41 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to install dependencies, build, and run your server.
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm i` or `yarn install`
+This will install dependencies.
 
+### `npm start` or `yarn start`
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## For each directory in your project, explain its role and what types of files should go into it.
+There are two notable directories in this project:
 
-### `npm test`
+### Components
+These are standard react components with no business logic, purely for display purposes on the UI.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Services
+These are a collections of services which interact directly with the state of the app.
 
-### `npm run build`
+The OpenSeaEventService is responsible for storing state, and App.js subscribes to updates from this service, which in turn updates all the props throught the app. The UserService is responsible for detecting Web3, or an anon user, and adding comments to the eventStore in the OpenSeaEventService.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How much time you spent on design implementation, framework setup, API connection, and interactive components / UX
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### design implementation - 30 mins
+Most of the time here was spend deciding which react component library to use. I decided on Semantic React UI because of the look and feel of their Feed component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### framework setup - 5 mins
+Using create-react-app I had the framework up and running in minutes.
 
-### `npm run eject`
+### API connection - 20 mins
+Simply done in the OpenSeaEventService with a fetch, more time was spent on picking out attributes to store in the eventStore.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### interactive components / UX - 3 hours
+Hooking it all together took, understandly, the most amount of time.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### manual testing - 1 hour
+I took about one hour to manually test the app to find any edge cases I may have missed during development.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
